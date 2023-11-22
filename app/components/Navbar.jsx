@@ -1,11 +1,11 @@
 import { BiLogoTwitter } from "react-icons/bi";
-// import { ThemeToggle } from "./theme-toggle";
+import { ThemeToggle } from "../theme-toggle";
 import Link from "next/link";
 
 export default function Navbar() {
     return (
         <nav className="font-mono text-xs grow justify-end items-center flex gap-1 md:gap-3">
-            {/* <ThemeToggle /> */}
+            <ThemeToggle />
 
             <Link
                 href="/about"
