@@ -6,11 +6,18 @@ import Header from "./components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-    title: "Will's Blog",
-    description: "Created by Will Nickson",
-    // openGraph: {}
+    title: "Will Nickson's Blog",
+    description:
+        "Will Nickson founder of Trippp, a software engineer, and the creator of the open source payments framework Bolt.",
+    openGraph: {
+        title: "Will Nickson's blog",
+        description:
+            "Will Nickson founder of Trippp, a software engineer, and the creator of the open source payments framework Bolt.",
+        url: "https://nickson.uk",
+        siteName: "Will Nickson's blog",
+    },
     twitter: {
-        card: "",
+        card: "summary_large_image",
         site: "@will__nickson",
         creator: "@will__nickson",
     },
