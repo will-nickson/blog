@@ -55,11 +55,11 @@ module.exports = withMDX({
                 destination: "/",
                 permanent: true,
             },
-            {
-                source: "/",
-                destination: "https://github.com/will-nickson",
-                permanent: true,
-            },
+            // {
+            //     source: "/",
+            //     destination: "https://github.com/will-nickson",
+            //     permanent: true,
+            // },
         ];
     },
 });
