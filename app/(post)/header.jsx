@@ -3,6 +3,9 @@
 import { useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { ago } from "time-ago";
+import useSWR from "swr";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export function Header({ posts }) {
     const segments = useSelectedLayoutSegments();
@@ -10,6 +13,10 @@ export function Header({ posts }) {
     // date/post
     // lang/date/post
     const initialPost = posts.find((post) => post.id === segments[segments.length - 1]);
+    const { data: post, mutate } = useSWR(`/api/view?id=${initialPost?.id ?? ""}`, fetcher, {
+        fallbackData: initialPost,
+        refreshInterval: 5000,
+    });
 
     if (initialPost == null) return <></>;
 
