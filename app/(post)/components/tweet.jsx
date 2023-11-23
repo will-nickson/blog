@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { getTweet } from "react-tweet/api";
 import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from "react-tweet";
-import redis from "@/app/redis";
+import redis from "../../redis";
 import { Caption } from "./caption";
 import "./tweet.css";
 

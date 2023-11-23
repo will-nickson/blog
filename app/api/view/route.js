@@ -1,7 +1,7 @@
 export const runtime = "edge";
 
-import redis from "@/app/redis";
-import postsData from "@/app/posts.json";
+import redis from "../../redis";
+import postsData from "../../posts.json";
 import commaNumber from "comma-number";
 import { NextResponse } from "next/server";
 
