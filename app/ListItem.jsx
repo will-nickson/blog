@@ -7,7 +7,10 @@ export default function ListItem({ post }) {
 
     return (
         <li className="mt-4 text-2xl">
-            <Link className="underline hover:text-black/70 dark:hover:text-white" href={`/posts/${id}`}>
+            <Link
+                className="underline hover:text-black/70 dark:hover:text-white"
+                href={`/posts/${id}`}
+            >
                 {title}
             </Link>
             <br />

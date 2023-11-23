@@ -30,7 +30,11 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" className={`${inter.className} antialiased`} suppressHydrationWarning={true}>
+        <html
+            lang="en"
+            className={`${inter.className} antialiased`}
+            suppressHydrationWarning={true}
+        >
             <head>
                 <script
                     dangerouslySetInnerHTML={{

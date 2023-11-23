@@ -5,33 +5,46 @@ import { getPosts } from "@/app/get-posts";
 
 // fonts
 const inter300 = fetch(
-    new URL(`../../../../node_modules/@fontsource/inter/files/inter-latin-300-normal.woff`, import.meta.url)
+    new URL(
+        `../../../../node_modules/@fontsource/inter/files/inter-latin-300-normal.woff`,
+        import.meta.url
+    )
 ).then((res) => res.arrayBuffer());
 
 const inter500 = fetch(
-    new URL(`../../../../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff`, import.meta.url)
+    new URL(
+        `../../../../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff`,
+        import.meta.url
+    )
 ).then((res) => res.arrayBuffer());
 
 const inter600 = fetch(
-    new URL(`../../../../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff`, import.meta.url)
+    new URL(
+        `../../../../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff`,
+        import.meta.url
+    )
 ).then((res) => res.arrayBuffer());
 
 const robotoMono400 = fetch(
-    new URL(`../../../../node_modules/@fontsource/roboto-mono/files/roboto-mono-latin-400-normal.woff`, import.meta.url)
+    new URL(
+        `../../../../node_modules/@fontsource/roboto-mono/files/roboto-mono-latin-400-normal.woff`,
+        import.meta.url
+    )
 ).then((res) => res.arrayBuffer());
 
 export async function GET(_req, { params: { id } }) {
-    console.log(params);
     const posts = await getPosts();
     const post = posts.find((p) => p.id === id);
     if (!post) {
-        console.error("here");
         return new Response("Not found", { status: 404 });
     }
 
     return new ImageResponse(
         (
-            <div tw="flex p-10 h-full w-full bg-white flex-col" style={font("Inter 300")}>
+            <div
+                tw="flex p-10 h-full w-full bg-white flex-col"
+                style={font("Inter 300")}
+            >
                 <header tw="flex text-[36px] w-full">
                     <div tw="font-bold" style={font("Inter 600")}>
                         Will Nickson
@@ -42,12 +55,18 @@ export async function GET(_req, { params: { id } }) {
 
                 <main tw="flex grow pb-3 flex-col items-center justify-center">
                     <div tw="flex">
-                        <div tw="bg-gray-100 p-8 text-7xl font-medium rounded-md text-center" style={font("Inter 500")}>
+                        <div
+                            tw="bg-gray-100 p-8 text-7xl font-medium rounded-md text-center"
+                            style={font("Inter 500")}
+                        >
                             {post.title}
                         </div>
                     </div>
 
-                    <div tw="mt-5 flex text-3xl text-gray-500" style={font("Roboto Mono 400")}>
+                    <div
+                        tw="mt-5 flex text-3xl text-gray-500"
+                        style={font("Roboto Mono 400")}
+                    >
                         {post.date} – {post.viewsFormatted} views
                     </div>
                 </main>

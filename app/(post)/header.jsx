@@ -12,17 +12,25 @@ export function Header({ posts }) {
     // segments can be:
     // date/post
     // lang/date/post
-    const initialPost = posts.find((post) => post.id === segments[segments.length - 1]);
-    const { data: post, mutate } = useSWR(`/api/view?id=${initialPost?.id ?? ""}`, fetcher, {
-        fallbackData: initialPost,
-        refreshInterval: 5000,
-    });
+    const initialPost = posts.find(
+        (post) => post.id === segments[segments.length - 1]
+    );
+    const { data: post, mutate } = useSWR(
+        `/api/view?id=${initialPost?.id ?? ""}`,
+        fetcher,
+        {
+            fallbackData: initialPost,
+            refreshInterval: 5000,
+        }
+    );
 
     if (initialPost == null) return <></>;
 
     return (
         <>
-            <h1 className="text-2xl font-bold mb-1 dark:text-gray-100">{post.title}</h1>
+            <h1 className="text-2xl font-bold mb-1 dark:text-gray-100">
+                {post.title}
+            </h1>
 
             <p className="font-mono flex text-xs text-gray-500 dark:text-gray-500">
                 <span className="flex-grow">
@@ -50,7 +58,11 @@ export function Header({ posts }) {
                 </span>
 
                 <span className="pr-1.5">
-                    <Views id={post.id} mutate={mutate} defaultValue={post.viewsFormatted} />
+                    <Views
+                        id={post.id}
+                        mutate={mutate}
+                        defaultValue={post.viewsFormatted}
+                    />
                 </span>
             </p>
         </>

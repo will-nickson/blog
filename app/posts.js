@@ -8,7 +8,10 @@ export function Posts({ posts }) {
     const [sort, setSort] = useState(["date", "desc"]);
 
     function sortDate() {
-        setSort((sort) => ["date", sort[0] !== "date" || sort[1] === "asc" ? "desc" : "asc"]);
+        setSort((sort) => [
+            "date",
+            sort[0] !== "date" || sort[1] === "asc" ? "desc" : "asc",
+        ]);
     }
 
     function sortViews() {
@@ -25,7 +28,9 @@ export function Posts({ posts }) {
                     <button
                         onClick={sortDate}
                         className={`w-12 h-9 text-left  ${
-                            sort[0] === "date" && sort[1] !== "desc" ? "text-gray-700 dark:text-gray-400" : ""
+                            sort[0] === "date" && sort[1] !== "desc"
+                                ? "text-gray-700 dark:text-gray-400"
+                                : ""
                         }`}
                     >
                         date
@@ -37,11 +42,19 @@ export function Posts({ posts }) {
                         className={`
                             h-9
                             pl-4
-                            ${sort[0] === "views" ? "text-gray-700 dark:text-gray-400" : ""}
+                            ${
+                                sort[0] === "views"
+                                    ? "text-gray-700 dark:text-gray-400"
+                                    : ""
+                            }
                         `}
                     >
                         views
-                        {sort[0] === "views" ? (sort[1] === "asc" ? "↑" : "↓") : ""}
+                        {sort[0] === "views"
+                            ? sort[1] === "asc"
+                                ? "↑"
+                                : "↓"
+                            : ""}
                     </button>
                 </header>
 
@@ -61,7 +74,9 @@ function List({ posts, sort }) {
                     ? new Date(b.date).getTime() - new Date(a.date).getTime()
                     : new Date(a.date).getTime() - new Date(b.date).getTime();
             } else {
-                return sortDirection === "desc" ? b.views - a.views : a.views - b.views;
+                return sortDirection === "desc"
+                    ? b.views - a.views
+                    : a.views - b.views;
             }
         });
     }, [posts, sort]);
@@ -70,26 +85,40 @@ function List({ posts, sort }) {
         <ul>
             {sortedPosts.map((post, i) => {
                 const year = getYear(post.date);
-                const firstOfYear = !sortedPosts[i - 1] || getYear(sortedPosts[i - 1].date) !== year;
-                const lastOfYear = !sortedPosts[i + 1] || getYear(sortedPosts[i + 1].date) !== year;
+                const firstOfYear =
+                    !sortedPosts[i - 1] ||
+                    getYear(sortedPosts[i - 1].date) !== year;
+                const lastOfYear =
+                    !sortedPosts[i + 1] ||
+                    getYear(sortedPosts[i + 1].date) !== year;
 
                 return (
                     <li key={post.id}>
-                        <Link href={`/${new Date(post.date).getFullYear()}/${post.id}`}>
+                        <Link
+                            href={`/${new Date(post.date).getFullYear()}/${
+                                post.id
+                            }`}
+                        >
                             <span
                                 className={`flex transition-[background-color] hover:bg-gray-100 dark:hover:bg-[#242424] active:bg-gray-200 dark:active:bg-[#222] border-y border-gray-200 dark:border-[#313131]
                                     ${!firstOfYear ? "border-t-0" : ""}
                                     ${lastOfYear ? "border-b-0" : ""}
                                 `}
                             >
-                                <span className={`py-3 flex grow items-center ${!firstOfYear ? "ml-14" : ""}`}>
+                                <span
+                                    className={`py-3 flex grow items-center ${
+                                        !firstOfYear ? "ml-14" : ""
+                                    }`}
+                                >
                                     {firstOfYear && (
                                         <span className="w-14 inline-block self-start shrink-0 text-gray-500 dark:text-gray-500">
                                             {year}
                                         </span>
                                     )}
 
-                                    <span className="grow dark:text-gray-100">{post.title}</span>
+                                    <span className="grow dark:text-gray-100">
+                                        {post.title}
+                                    </span>
 
                                     <span className="text-gray-500 dark:text-gray-500 text-xs">
                                         {post.viewsFormatted}
