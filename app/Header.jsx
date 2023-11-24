@@ -2,9 +2,9 @@
 import { BiLogoTwitter } from "react-icons/bi";
 import { ThemeToggle } from "./theme-toggle";
 import { usePathname } from "next/navigation";
-import { useReadingProgress } from "./useReadingProgress";
+import { useReadingProgress } from "./use-reading-progress";
 import Link from "next/link";
-import Logo from "./Logo";
+import Logo from "./logo";
 
 export default function Header() {
     const pathname = usePathname();
