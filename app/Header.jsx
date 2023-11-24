@@ -12,13 +12,15 @@ export default function Header() {
 
     return (
         <>
-            <div
-                className="sticky top-0 h-1 w-100% bg-gradient-to-r from-white from-30% to-white to-100% transition-all duration-150 ease-in-out"
-                style={{
-                    backgroundSize: `${completion}%`,
-                    backgroundRepeat: "no-repeat",
-                }}
-            />
+            {pathname !== "/" && pathname !== "/about" && (
+                <div
+                    className="sticky top-0 h-1 w-100% bg-gradient-to-r from-white from-30% to-white to-100% transition-all duration-150 ease-in-out"
+                    style={{
+                        backgroundSize: `${completion}%`,
+                        backgroundRepeat: "no-repeat",
+                    }}
+                />
+            )}
             <header className="flex mb-5 md:mb-10 items-center">
                 <Logo />
                 <nav className="font-mono text-xs grow justify-end items-center flex gap-1 md:gap-3">
