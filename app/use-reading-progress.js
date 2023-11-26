@@ -19,9 +19,9 @@ export function useReadingProgress() {
             }
         }
 
-        function handleRouteChange() {
-            setCompletion(0); // Reset completion when the route changes
-        }
+        // function handleRouteChange() {
+        //     setCompletion(0); // Reset completion when the route changes
+        // }
 
         // Add scroll and route change event listeners
         window.addEventListener("scroll", updateScrollCompletion);
