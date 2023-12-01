@@ -5,7 +5,9 @@ module.exports = {
     darkMode: "class",
     content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
     theme: {
-        extend: {},
+        backgroundImage: {
+            noise: "url('../public/images/noise.png')",
+        },
     },
     plugins: [
         plugin(function ({ addVariant }) {
