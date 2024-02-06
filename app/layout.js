@@ -31,7 +31,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
     return (
         <html
-            className={`${inter.className} antialiased bg-noise opacity-30`}
+            className={`${inter.className} antialiased`}
             lang="en"
             suppressHydrationWarning={true}
         >
