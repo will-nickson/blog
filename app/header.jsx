@@ -36,6 +36,18 @@ export default function Header() {
                     >
                         About
                     </Link>
+
+                    <Link
+                        href="/work"
+                        className={`inline-flex ${
+                            pathname === "/work"
+                                ? "bg-gray-200 dark:bg-[#313131]"
+                                : ""
+                        } hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]`}
+                    >
+                        Work
+                    </Link>
+
                     <a
                         href="https://twitter.com/will__nickson"
                         target="_blank"
