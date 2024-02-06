@@ -4,11 +4,6 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
     darkMode: "class",
     content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
-    theme: {
-        backgroundImage: {
-            noise: "url('../public/images/noise.png')",
-        },
-    },
     plugins: [
         plugin(function ({ addVariant }) {
             // this class is applied to `html` by `app/theme-efect.ts`, similar
