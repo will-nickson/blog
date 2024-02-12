@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { themeEffect } from "./theme-effect";
@@ -6,15 +7,15 @@ import Header from "./header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-    title: "Will Nickson's Blog",
+    title: "Will Nickson",
     description:
         "Will Nickson founder of Trippp, a software engineer, and the creator of the open source payments framework Bolt.",
     openGraph: {
-        title: "Will Nickson's blog",
+        title: "Will Nickson",
         description:
             "Will Nickson founder of Trippp, a software engineer, and the creator of the open source payments framework Bolt.",
         url: "https://nickson.uk",
-        siteName: "Will Nickson's blog",
+        siteName: "Will Nickson",
     },
     twitter: {
         card: "summary_large_image",
@@ -48,8 +49,8 @@ export default function RootLayout({ children }) {
                     {children}
                 </main>
 
-                {/* <Footer />
-                <Analytics /> */}
+                {/* <Footer /> */}
+                <Analytics />
             </body>
         </html>
     );
