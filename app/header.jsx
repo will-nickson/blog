@@ -27,25 +27,14 @@ export default function Header() {
                     <ThemeToggle />
 
                     <Link
-                        href="/about"
+                        href="/blog"
                         className={`inline-flex ${
-                            pathname === "/about"
+                            pathname === "/blog"
                                 ? "bg-gray-200 dark:bg-[#313131]"
                                 : ""
                         } hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]`}
                     >
-                        About
-                    </Link>
-
-                    <Link
-                        href="/work"
-                        className={`inline-flex ${
-                            pathname === "/work"
-                                ? "bg-gray-200 dark:bg-[#313131]"
-                                : ""
-                        } hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]`}
-                    >
-                        Work
+                        Blog
                     </Link>
 
                     <a
