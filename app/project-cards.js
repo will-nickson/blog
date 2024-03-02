@@ -11,8 +11,8 @@ export default function ProjectCards() {
                     <p className="font-thin mb-4">Founder - 2023</p>
                     <p className="text-base">
                         Trippp is a site for design lovers or anyone who enjoys
-                        checking out the coolest spots while they're away
-                        travelling in some of the world's best cities.
+                        checking out the coolest spots while they&apos;re away
+                        travelling in some of the world&apos;s best cities.
                     </p>
                 </div>
                 <div className="w-1/2">image</div>
@@ -29,7 +29,7 @@ export default function ProjectCards() {
                     <p className="font-thin mb-4">Freelance - 2024</p>
                     <p className="text-base">
                         This project was a complete redesign and build for a
-                        client's holiday rental site in order to drive more
+                        client&apos;s holiday rental site in order to drive more
                         bookings.
                     </p>
                 </div>
