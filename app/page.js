@@ -5,11 +5,11 @@ export default async function Home() {
     return (
         <>
             <h1 className="tracking-wide text-lg md:text-xl mb-2 md:mb-4">
-                Hey I'm Will.
+                Hey I&apos;m Will.
             </h1>
             <p className="tracking-wide text-lg md:text-xl mb-4 md:mb-8">
-                I'm a freelance software developer and founder with a background
-                creating full-stack web applications.
+                I&apos;m a freelance software developer and founder with a
+                background creating full-stack web applications.
             </p>
             <p className="tracking-wide text-lg md:text-xl flex items-center mb-4 md:mb-8">
                 Right now I spend most of my time building{" "}
