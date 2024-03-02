@@ -1,8 +1,9 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { themeEffect } from "./theme-effect";
-import { Analytics } from "@vercel/analytics/react";
 import Header from "./header";
+import Footer from "./footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,7 +50,7 @@ export default function RootLayout({ children }) {
                     {children}
                 </main>
 
-                {/* <Footer /> */}
+                <Footer />
                 <Analytics />
             </body>
         </html>
