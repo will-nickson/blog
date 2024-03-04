@@ -8,15 +8,15 @@ import Logo from "./logo";
 
 export default function Header() {
     const pathname = usePathname();
-    const completion = useReadingProgress();
+    const progress = useReadingProgress();
 
     return (
         <>
-            {pathname !== "/" && pathname !== "/about" && (
+            {pathname !== "/" && (
                 <div
-                    className="sticky top-0 h-1 w-100% bg-gradient-to-r from-white from-30% to-white to-100% transition-all duration-150 ease-in-out"
+                    className="sticky top-0 h-1 w-100% bg-gradient-to-r from-black dark:from-white from-30% to-black dark:to-white to-100% transition-all duration-150 ease-in-out"
                     style={{
-                        backgroundSize: `${completion}%`,
+                        backgroundSize: `${progress}%`,
                         backgroundRepeat: "no-repeat",
                     }}
                 />
