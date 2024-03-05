@@ -14,4 +14,11 @@ module.exports = {
     future: {
         hoverOnlyWhenSupported: true,
     },
+    theme: {
+        extend: {
+            textUnderlineOffset: {
+                5: "5px",
+            },
+        },
+    },
 };

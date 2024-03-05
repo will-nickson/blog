@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { themeEffect } from "./theme-effect";
+import Toaster from "./toast";
 import Header from "./header";
 import Footer from "./footer";
 import { Analytics } from "@vercel/analytics/react";
@@ -44,8 +45,9 @@ export default function RootLayout({ children }) {
                     }}
                 />
             </head>
-            <body className="dark:text-gray-100 max-w-2xl m-auto">
+            <body className="text-gray-700 dark:text-gray-100 max-w-3xl m-auto min-w-[20rem]">
                 <main className="p-6 pt-3 md:pt-6 min-h-screen">
+                    <Toaster />
                     <Header />
                     {children}
                 </main>
