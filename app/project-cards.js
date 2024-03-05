@@ -4,7 +4,7 @@ export default function ProjectCards() {
     return (
         <div className="flex flex-col gap-4">
             <a
-                className="p-4 md:p-8 flex flex-col md:flex-row gap-2 border rounded-md cursor-pointer hover:bg-gray-200 dark:hover:bg-[#313131] shadow-xl"
+                className="p-4 md:p-8 flex flex-col md:flex-row gap-2 border rounded-md cursor-pointer hover:bg-gray-200 dark:hover:bg-[#313131] shadow-xl dark:shadow-gray-900 hover:dark:shadow-gray-800/90"
                 href="https://trippp.app"
                 target="_blank"
             >
@@ -39,7 +39,7 @@ export default function ProjectCards() {
                 </div>
             </a>
             <a
-                className="p-4 md:p-8 flex flex-col md:flex-row gap-2 border rounded-md cursor-pointer hover:bg-gray-200 dark:hover:bg-[#313131] shadow-xl"
+                className="p-4 md:p-8 flex flex-col md:flex-row gap-2 border rounded-md cursor-pointer hover:bg-gray-200 dark:hover:bg-[#313131] shadow-xl dark:shadow-gray-900 hover:dark:shadow-gray-800/90"
                 href="https://honeysucklecottage.co.uk"
                 target="_blank"
             >
