@@ -1,12 +1,13 @@
 import NextImage from "next/image";
 import ProjectCards from "./project-cards";
+import Contact from "./contact";
 
 export default function Home() {
     return (
         <>
+            {/* ABOUT ME */}
             <div className="flex flex-col gap-2 md:gap-4">
                 <div className="w-full flex flex-col md:flex-row md:mb-8 md:items-center md:justify-center">
-                    {/* DESKTOP */}
                     <div className="w-full md:order-last mb-5 md:mb-0 md:flex md:justify-end">
                         <NextImage
                             className="rounded"
@@ -31,7 +32,7 @@ export default function Home() {
                 <p className="tracking-wide text-lg md:text-xl">
                     Right now I spend most of my time building{" "}
                     <a
-                        className="text-gray-600 hover:text-gray-700 underline underline-offset-5 decoration-1 decoration-gray-400 hover:decoration-gray-700"
+                        className="text-gray-600 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-100 underline underline-offset-5 decoration-1 decoration-gray-400 dark:decoration-gray-600 hover:decoration-gray-700 dark:hover:decoration-gray-100"
                         href="https://trippp.app"
                         target="_blank"
                     >
@@ -47,16 +48,15 @@ export default function Home() {
                 </p>
             </div>
 
-            {/* ADD LINE BREAK */}
             <hr className="my-12" />
 
-            {/* <p className="text-lg mb-12 lg:mb-16">
-                Email{" "}
-                <span className="text-neutral-600 dark:text-neutral-400">
-                    will@nickson.uk
-                </span>
-            </p> */}
+            {/* PROJECTS */}
             <ProjectCards />
+
+            <hr className="my-12" />
+
+            {/* EMAIL */}
+            <Contact />
         </>
     );
 }
