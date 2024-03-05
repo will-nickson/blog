@@ -15,6 +15,8 @@ export default function Home() {
                             alt="Honey Suckle Cottage Site"
                             height={250}
                             width={250}
+                            style={{ width: "auto", height: "auto" }}
+                            priority={true}
                         />
                     </div>
 
@@ -32,7 +34,7 @@ export default function Home() {
                 <p className="tracking-wide text-lg md:text-xl">
                     Right now I spend most of my time building{" "}
                     <a
-                        className="text-gray-600 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-100 underline underline-offset-5 decoration-1 decoration-gray-400 dark:decoration-gray-600 hover:decoration-gray-700 dark:hover:decoration-gray-100"
+                        className="text-gray-600 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-100 underline underline-offset-5 hover:underline-offset-4 decoration-1 decoration-gray-400 dark:decoration-gray-600 hover:decoration-gray-700 dark:hover:decoration-gray-100"
                         href="https://trippp.app"
                         target="_blank"
                     >
@@ -42,7 +44,7 @@ export default function Home() {
                 </p>
 
                 <p className="tracking-wide text-lg md:text-xl">
-                    I also work with clients to craft landing pages, bespoke
+                    I also work with clients to create landing pages, bespoke
                     sites and web applications tailored to their needs. Checkout
                     some of my work below!
                 </p>
