@@ -1,50 +1,65 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import clsx from "clsx";
 
-const initValues = { name: "", email: "", message: "" };
-
-const initState = { isLoading: false, error: "", values: initValues };
-
 export default function ContactForm() {
-    const [state, setState] = useState(initState);
-    const { values } = state;
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
 
-    const handleChange = ({ target }) =>
-        setState((prev) => ({
-            ...prev,
-            values: {
-                ...prev.values,
-                [target.name]: target.value,
-            },
-        }));
+    const [errors, setErrors] = useState({});
+    const [isFormValid, setIsFormValid] = useState(false);
+
+    useEffect(() => {
+        validateForm();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [name, email, message]);
+
+    const validateForm = () => {
+        let errors = {};
+
+        if (!name) {
+            errors.name = "Name is required.";
+        }
+
+        if (!email) {
+            errors.email = "Email is required.";
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            errors.email = "Email is invalid.";
+        }
+
+        if (!message) {
+            errors.message = "Message is required.";
+        }
+
+        setErrors(errors);
+        setIsFormValid(Object.keys(errors).length === 0);
+    };
 
     const onSubmit = async () => {
-        setState((prev) => ({
-            ...prev,
-            isLoading: true,
-        }));
+        if (!isFormValid) {
+            for (const error in errors) {
+                toast.error(errors[error]);
+            }
+        } else {
+            try {
+                await fetch("/api/contact", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                    },
+                    body: JSON.stringify({ name, email, message }),
+                });
 
-        try {
-            await fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                },
-                body: JSON.stringify(values),
-            });
-
-            setState(initState);
-            toast.success("Message sent");
-        } catch (error) {
-            toast.error("Something Went Wrong");
-            setState((prev) => ({
-                ...prev,
-                isLoading: false,
-                error: error.message,
-            }));
+                setName("");
+                setEmail("");
+                setMessage("");
+                toast.success("Message sent");
+            } catch (error) {
+                toast.error("Something Went Wrong");
+            }
         }
     };
 
@@ -72,8 +87,8 @@ export default function ContactForm() {
                                     type="text"
                                     id="name"
                                     name="name"
-                                    value={values.name}
-                                    onChange={handleChange}
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
                                     required
                                 />
                             </div>
@@ -88,8 +103,8 @@ export default function ContactForm() {
                                     type="email"
                                     id="email"
                                     name="email"
-                                    value={values.email}
-                                    onChange={handleChange}
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     required
                                 />
                             </div>
@@ -103,8 +118,8 @@ export default function ContactForm() {
                                     className="w-full bg-gray-100 dark:bg-gray-700 bg-opacity-50 rounded border border-gray-300 dark:border-gray-600 focus:border-gray-500 focus:bg-white focus:ring-2 focus:ring-gray-200 h-32 text-base outline-none dark:text-gray-50 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                                     id="message"
                                     name="message"
-                                    value={values.message}
-                                    onChange={handleChange}
+                                    value={message}
+                                    onChange={(e) => setMessage(e.target.value)}
                                     required
                                 ></textarea>
                             </div>
@@ -113,10 +128,7 @@ export default function ContactForm() {
                             <button
                                 className={clsx(
                                     "flex mx-auto border-0 py-2 px-8 focus:outline-none bg-gray-200 dark:bg-[#313131] active:bg-gray-400 dark:active:bg-[#575757] rounded text-lg shadow-md dark:shadow-gray-700 hover:dark:shadow-gray-600",
-                                    (!values.name ||
-                                        !values.email ||
-                                        !values.message) &&
-                                        "cursor-not-allowed"
+                                    !isFormValid && "cursor-not-allowed"
                                 )}
                                 onClick={onSubmit}
                             >
