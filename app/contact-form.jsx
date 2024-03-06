@@ -8,7 +8,7 @@ const initValues = { name: "", email: "", message: "" };
 
 const initState = { isLoading: false, error: "", values: initValues };
 
-export default function Contact() {
+export default function ContactForm() {
     const [state, setState] = useState(initState);
     const { values } = state;
 
@@ -28,7 +28,7 @@ export default function Contact() {
         }));
 
         try {
-            await fetch("/api/sendEmail", {
+            await fetch("/api/contact", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",

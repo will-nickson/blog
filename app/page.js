@@ -1,6 +1,6 @@
 import NextImage from "next/image";
 import ProjectCards from "./project-cards";
-import Contact from "./contact";
+import ContactForm from "./contact-form";
 
 export default function Home() {
     return (
@@ -58,7 +58,7 @@ export default function Home() {
             <hr className="my-12" />
 
             {/* EMAIL */}
-            <Contact />
+            <ContactForm />
         </>
     );
 }
