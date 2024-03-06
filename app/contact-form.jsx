@@ -127,7 +127,8 @@ export default function ContactForm() {
                         <div className="p-2 w-full">
                             <button
                                 className={clsx(
-                                    "flex mx-auto border-0 py-2 px-8 focus:outline-none bg-gray-200 dark:bg-[#313131] active:bg-gray-400 dark:active:bg-[#575757] rounded text-lg shadow-md dark:shadow-gray-700 hover:dark:shadow-gray-600",
+                                    "flex mx-auto border-0 py-2 px-8 focus:outline-none bg-gray-200 dark:bg-[#313131] active:bg-gray-400 dark:active:bg-[#575757] rounded text-lg shadow-md dark:shadow-gray-700",
+                                    isFormValid && "hover:dark:shadow-gray-600",
                                     !isFormValid && "cursor-not-allowed"
                                 )}
                                 onClick={onSubmit}
