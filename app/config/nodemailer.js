@@ -11,6 +11,17 @@ export const transporter = nodemailer.createTransport({
     },
 });
 
+await new Promise((resolve, reject) => {
+    transporter.verify((error, success) => {
+        if (error) {
+            console.log("[Nodemailer Verify Error]: ", error);
+            reject(error);
+        } else {
+            resolve(success);
+        }
+    });
+});
+
 export const mailOptions = {
     from: email,
     to: email,
