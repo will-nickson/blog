@@ -12,9 +12,9 @@ export default function ProjectCards() {
                     <h3 className="text-lg md:text-xl font-bold">Trippp</h3>
                     <p className="font-thin mb-4">Founder - 2023</p>
                     <p className="text-sm md:text-base">
-                        Trippp is for design lovers and anyone who enjoys
-                        checking out cool spots while they&apos;re away
-                        travelling through the world&apos;s best cities.
+                        A site I built for people who love design and travel.
+                        It&apos;s a collection of hundreds of the coolest spots
+                        to checkout while you&apos;re away travelling.
                     </p>
                 </div>
                 <div className="w-full h-full md:w-1/2">
@@ -22,7 +22,7 @@ export default function ProjectCards() {
                         {/* MOBILE */}
                         <NextImage
                             className="md:hidden block rounded"
-                            src="/images/honeysuckle-cottage-mobile.png"
+                            src="/images/trippp-mobile.png"
                             alt="Honey Suckle Cottage Site"
                             height={300}
                             width={300}
@@ -30,7 +30,7 @@ export default function ProjectCards() {
                         {/* DESKTOP */}
                         <NextImage
                             className="hidden md:visible md:block rounded w-full h-full"
-                            src="/images/honeysuckle-cottage-desktop.png"
+                            src="/images/trippp-desktop.png"
                             alt="Honey Suckle Cottage Site"
                             height={600}
                             width={400}
@@ -49,9 +49,10 @@ export default function ProjectCards() {
                     </h3>
                     <p className="font-thin mb-4">Freelance - 2024</p>
                     <p className="text-sm md:text-base">
-                        This was a complete site redesign and build for a
-                        client&apos;s holiday rental cottage in order to drive
-                        more bookings during the off seasons.
+                        This project was a complete redesign, build and
+                        optimisation of a client&apos;s holiday rental cottage
+                        site & Google My Business profile in order to drive more
+                        bookings during the off season.
                     </p>
                 </div>
                 <div className="w-full h-full md:w-1/2">
