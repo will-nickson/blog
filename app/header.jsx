@@ -1,4 +1,5 @@
 "use client";
+
 import { BiLogoTwitter } from "react-icons/bi";
 import { ThemeToggle } from "./theme-toggle";
 import { usePathname } from "next/navigation";
@@ -10,9 +11,12 @@ export default function Header() {
     const pathname = usePathname();
     const progress = useReadingProgress();
 
+    const blogArticleRegex = /^\/\d{4}\/[a-z\-]+(?:-[a-z\-]+)*$/;
+    const isBlogArticlePage = blogArticleRegex.test(pathname);
+
     return (
         <>
-            {pathname !== "/" && (
+            {isBlogArticlePage == true && (
                 <div
                     className="sticky top-0 h-1 w-100% bg-gradient-to-r from-black dark:from-white from-30% to-black dark:to-white to-100% transition-all duration-150 ease-in-out"
                     style={{
