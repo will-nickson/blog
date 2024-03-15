@@ -12,7 +12,7 @@ export default function Footer() {
             </div>
             <div>
                 <a target="_blank" href="https://github.com/will-nickson">
-                    <FaGithub />
+                    <FaGithub className="w-3.5 h-3.5" />
                 </a>
             </div>
         </footer>
