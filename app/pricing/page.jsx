@@ -7,7 +7,7 @@ export default function Pricing() {
     const [simplePackage, setSimplePackage] = useState(false);
 
     return (
-        <main className="">
+        <main>
             <h1 className="text-2xl mb-5">
                 Simple,{" "}
                 <span className="italic tracking-wide text-gray-500">
@@ -17,7 +17,7 @@ export default function Pricing() {
             </h1>
 
             {/* PACKAGE INFO */}
-            <div className="p-4 bg-gray-100 rounded-3xl shadow-xl">
+            <div className="p-4 bg-gray-100 dark:bg-gray-700/80 dark:text-gray-200 rounded-3xl shadow-xl dark:shadow-gray-800">
                 {/* SELECT & LOGO'S */}
                 <div className="flex items-center place-content-between">
                     {/* Logos */}
@@ -51,7 +51,7 @@ export default function Pricing() {
                             className={`py-2 px-5 ${
                                 simplePackage
                                     ? "bg-gray-600/90 text-white focus:outline-none rounded-3xl"
-                                    : "focus:outline-none"
+                                    : "focus:outline-none text-gray-700"
                             }`}
                             onClick={() => {
                                 setSimplePackage(true);
@@ -63,7 +63,7 @@ export default function Pricing() {
                             className={`py-2 px-5 ${
                                 !simplePackage
                                     ? "bg-gray-600/90 text-white focus:outline-none rounded-3xl"
-                                    : "focus:outline-none"
+                                    : "focus:outline-none text-gray-700"
                             }`}
                             onClick={() => {
                                 setSimplePackage(false);
@@ -80,7 +80,7 @@ export default function Pricing() {
                 </h2>
 
                 {/* INCLUDES */}
-                <div className="h-96">
+                <div className="h-80">
                     <ul className="flex flex-col gap-4">
                         <li className="flex items-center gap-1.5">
                             <IoIosCheckmarkCircleOutline /> Design
