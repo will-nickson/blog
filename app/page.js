@@ -55,7 +55,7 @@ export default function Home() {
             {/* PROJECTS */}
             <ProjectCards />
 
-            <hr className="my-12" />
+            <div className="my-12"></div>
 
             {/* EMAIL */}
             <ContactForm />
