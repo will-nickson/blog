@@ -1,10 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 export default function Pricing() {
     const [simplePackage, setSimplePackage] = useState(false);
+    const [logoSize, setLogoSize] = useState("25px");
+
+    useEffect(() => {
+        const handleResize = () => {
+            const isDesktopOrLaptop = window.innerWidth >= 1024;
+            setLogoSize(isDesktopOrLaptop ? "25px" : "15px");
+        };
+
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     return (
         <main>
@@ -19,14 +33,14 @@ export default function Pricing() {
             {/* PACKAGE INFO */}
             <div className="p-4 bg-gray-100 dark:bg-gray-700/80 dark:text-gray-200 rounded-3xl shadow-xl dark:shadow-gray-800">
                 {/* SELECT & LOGO'S */}
-                <div className="flex items-center place-content-between">
+                <div className="px-2 flex items-center place-content-between">
                     {/* Logos */}
                     <div className="flex gap-1 dark:filter dark:invert">
                         <svg
                             fill="#000000"
                             viewBox="0 0 512 512"
-                            width="25px"
-                            height="25px"
+                            width={logoSize}
+                            height={logoSize}
                             xmlns="http://www.w3.org/2000/svg"
                         >
                             <title>react icon logo</title>
@@ -36,8 +50,8 @@ export default function Pricing() {
                         <svg
                             fill="#000000"
                             viewBox=".5 -.2 1023 1024.1"
-                            width="25px"
-                            height="25px"
+                            width={logoSize}
+                            height={logoSize}
                             xmlns="http://www.w3.org/2000/svg"
                         >
                             <title>nextjs icon logo</title>
@@ -47,8 +61,8 @@ export default function Pricing() {
                         <svg
                             fill="#000000"
                             viewBox="0 0 24 24"
-                            width="25px"
-                            height="25px"
+                            width={logoSize}
+                            height={logoSize}
                             xmlns="http://www.w3.org/2000/svg"
                         >
                             <title>tailwindcss icon logo</title>
@@ -59,19 +73,20 @@ export default function Pricing() {
                     {/* BUTTON */}
                     <div className="p-1 w-auto h-fit flex items-center bg-gray-300 rounded-full">
                         <button
-                            className={`py-2 px-5 ${
+                            className={`py-1 lg:py-2 px-3 lg:px-5 text-sm lg:text-base ${
                                 simplePackage
                                     ? "bg-gray-600/90 text-white focus:outline-none rounded-3xl"
                                     : "focus:outline-none text-gray-700"
                             }`}
                             onClick={() => {
+                                console.log("click");
                                 setSimplePackage(true);
                             }}
                         >
                             Simple
                         </button>
                         <button
-                            className={`py-2 px-5 ${
+                            className={`py-1 lg:py-2 px-3 lg:px-5 text-sm lg:text-base ${
                                 !simplePackage
                                     ? "bg-gray-600/90 text-white focus:outline-none rounded-3xl"
                                     : "focus:outline-none text-gray-700"
@@ -86,13 +101,13 @@ export default function Pricing() {
                 </div>
 
                 {/* PACKAGE TITLE */}
-                <h2 className="font-bold text-lg mt-3 mb-2">
+                <h2 className="px-2 font-bold text-lg mt-4 lg:mt-3 mb-2">
                     {simplePackage ? "Single " : "Multi "} Page Site
                 </h2>
 
                 {/* INCLUDES */}
                 <div className="h-80">
-                    <ul className="flex flex-col gap-4">
+                    <ul className="px-2 flex flex-col gap-4">
                         <li className="flex items-center gap-1.5">
                             <IoIosCheckmarkCircleOutline /> Design
                         </li>
@@ -132,11 +147,11 @@ export default function Pricing() {
                 </div>
 
                 {/* PRICE */}
-                <div className="px-4">
-                    <span className="text-4xl font-semibold">
+                <div className="px-2 pt-4">
+                    <span className="text-2xl lg:text-4xl font-semibold">
                         {simplePackage ? "£999" : "£2999"}{" "}
                     </span>
-                    <span className="text-sm font-extralight tracking-wide">
+                    <span className="text-xs lg:text-sm font-extralight tracking-wide">
                         one time purchase
                     </span>
                 </div>
@@ -145,7 +160,7 @@ export default function Pricing() {
                 <div className="my-4 w-auto h-px bg-gray-300"></div>
 
                 {/* MAINTENANCE FEE */}
-                <p className="px-4 my-2 text-sm font-extralight tracking-wide">
+                <p className="px-2 my-2 text-xs lg:text-sm font-extralight tracking-wide">
                     This package has a
                     {simplePackage ? " £40/month " : " £90/month "} maintenance
                     fee. This fee covers domain, email & website hosting, server
