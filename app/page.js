@@ -55,10 +55,10 @@ export default function Home() {
             {/* PROJECTS */}
             <ProjectCards />
 
-            <div className="my-12"></div>
+            {/* <div className="my-12"></div> */}
 
             {/* EMAIL */}
-            <ContactForm />
+            {/* <ContactForm /> */}
         </>
     );
 }
