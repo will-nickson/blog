@@ -31,14 +31,14 @@ export default function Header() {
                     <ThemeToggle />
 
                     <Link
-                        href="/blog"
+                        href="/writing"
                         className={`inline-flex ${
-                            pathname === "/blog"
+                            pathname === "/writing"
                                 ? "bg-gray-200 dark:bg-[#313131]"
                                 : ""
                         } hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]`}
                     >
-                        Blog
+                        Writing
                     </Link>
 
                     <a
