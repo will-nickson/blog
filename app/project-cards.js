@@ -12,9 +12,10 @@ export default function ProjectCards() {
                     <h3 className="text-lg md:text-xl font-bold">Trippp</h3>
                     <p className="font-thin mb-4">Founder - 2023</p>
                     <p className="text-sm md:text-base">
-                        A site I built for people who love design and travel.
-                        It&apos;s a collection of hundreds of the coolest spots
-                        to checkout while you&apos;re away travelling.
+                        Trippp is a site I built for people who love design and
+                        travel. It&apos;s a collection of hundreds of the
+                        coolest spots to checkout while you&apos;re away
+                        travelling in some of the worlds best cities.
                     </p>
                 </div>
                 <div className="w-full h-full md:w-1/2">
@@ -50,9 +51,9 @@ export default function ProjectCards() {
                     <p className="font-thin mb-4">Freelance - 2024</p>
                     <p className="text-sm md:text-base">
                         This project was a complete redesign, build and
-                        optimisation of a client&apos;s holiday rental cottage
-                        site & Google My Business profile in order to drive more
-                        bookings during the off season.
+                        optimisation of a client&apos;s holiday cottage site and
+                        Google My Business profile in order to drive more
+                        bookings to their rental during the off season.
                     </p>
                 </div>
                 <div className="w-full h-full md:w-1/2">
