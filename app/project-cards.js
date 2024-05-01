@@ -12,9 +12,10 @@ export default function ProjectCards() {
                     <h3 className="text-lg md:text-xl font-bold">Trippp</h3>
                     <p className="font-thin mb-4">Founder - 2023</p>
                     <p className="text-sm md:text-base">
-                        A site I built for people who love design and travel.
-                        It&apos;s a collection of hundreds of the coolest spots
-                        to checkout while you&apos;re away travelling.
+                        Trippp is a site I built for people who love design and
+                        travel. It&apos;s a collection of hundreds of the
+                        coolest spots to checkout while you&apos;re away
+                        travelling in some of the worlds best cities.
                     </p>
                 </div>
                 <div className="w-full h-full md:w-1/2">
