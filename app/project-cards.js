@@ -50,9 +50,9 @@ export default function ProjectCards() {
                     <p className="font-thin mb-4">Freelance - 2024</p>
                     <p className="text-sm md:text-base">
                         This project was a complete redesign, build and
-                        optimisation of a client&apos;s holiday rental cottage
-                        site & Google My Business profile in order to drive more
-                        bookings during the off season.
+                        optimisation of a client&apos;s holiday cottage site and
+                        Google My Business profile in order to drive more
+                        bookings to their rental during the off season.
                     </p>
                 </div>
                 <div className="w-full h-full md:w-1/2">
