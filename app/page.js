@@ -1,6 +1,6 @@
 import NextImage from "next/image";
 import ProjectCards from "./project-cards";
-import ContactForm from "./contact-form";
+// import ContactForm from "./contact-form";
 
 export default function Home() {
     return (
