@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <>
             {/* ABOUT ME */}
-            <div className="flex flex-col gap-2 md:gap-4">
+            <div className="flex flex-col gap-2 md:gap-4 mb-12">
                 <div className="w-full flex flex-col md:flex-row md:mb-8 md:items-center md:justify-center">
                     <div className="w-full md:order-last mb-5 md:mb-0 md:flex md:justify-end">
                         <NextImage
@@ -35,10 +35,10 @@ export default function Home() {
                     Right now I spend most of my time building{" "}
                     <a
                         className="text-gray-600 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-100 underline underline-offset-5 hover:underline-offset-4 decoration-1 decoration-gray-400 dark:decoration-gray-600 hover:decoration-gray-700 dark:hover:decoration-gray-100"
-                        href="https://trippp.app"
+                        href="https://tripspot.co"
                         target="_blank"
                     >
-                        Trippp
+                        Tripspot
                     </a>
                     .
                 </p>
@@ -50,7 +50,7 @@ export default function Home() {
                 </p>
             </div>
 
-            <hr className="my-12" />
+            {/* <hr className="my-12" /> */}
 
             {/* PROJECTS */}
             <ProjectCards />
